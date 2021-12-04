@@ -1,5 +1,28 @@
 # Kubeflow Pipeline
 
+## Train
+
+기존 데이터 + 추가된 데이터로 학습을 한다.
+
+- [ ] 로컬에서 훈련 가능하게 만들기
+- [ ] 데이터를 GCS에서 가져오고, 체크 포인트를 GCS에 저장하기 (input, output 데이터 위치 정의)
+  - Opt1. Cloud Storage의 원본 데이터를 클러스터로 다운
+  - Opt2. PV로 GCS 마운트
+- [ ] Dockerize
+  - Arguments
+
+## Evaluation
+
+테스트셋에 대해 평가를 하여 `mIoU`를 측정하고 기록한다.
+
+## Model Checkpoint Update
+
+1. 기존 학습했던 모델의 `mIoU`를 Cloud Storage에서 다운로드 한다.
+2. 기존 학습했던 모델의 `mIoU`가 없거나, 신규 학습한 모델의 정확도가 일정 기준 이상 높다면 모델 자체와 정확도 정보를 Cloud Storage에 업로드 한다.
+3. 클라우드 상의 모델 학습에서 정확도가 더 높아진 경우 TorchServe에 신규 버전으로 배포한다.
+
+## Serving
+
 ## minikube setting
 
 ```
