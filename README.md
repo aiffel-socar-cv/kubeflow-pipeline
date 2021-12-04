@@ -4,6 +4,7 @@
 
 기존 데이터 + 추가된 데이터로 학습을 한다.
 
+- [x] Kubeflow Setting on Ubuntu 20.04
 - [ ] 로컬에서 훈련 가능하게 만들기
 - [ ] 데이터를 GCS에서 가져오고, 체크 포인트를 GCS에 저장하기 (input, output 데이터 위치 정의)
   - Opt1. Cloud Storage의 원본 데이터를 클러스터로 다운
