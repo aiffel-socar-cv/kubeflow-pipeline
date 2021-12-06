@@ -19,10 +19,14 @@ class Colors:
 def create_folder(directory):
     try:
         if not os.path.exists(directory):
+            print("CREATING FOLDER: ", Colors.GREEN, directory, Colors.RESET)
             os.makedirs(directory)
-            print("CREATED FOLDER: ", Colors.GREEN, directory, Colors.RESET)
-        else:  # TODO: delete already exist folder
+        else:
             print(Colors.RED, "The directory already exists!!!", Colors.RESET)
+            os.rmdir(directory)
+            print("RECREATING FOLDER: ", Colors.GREEN, directory, Colors.RESET)
+            os.makedirs(directory)
+
     except OSError:
         print(Colors.RED, "Craeting directory failed.", Colors.RESET)
 
@@ -53,7 +57,6 @@ def main():
     )
 
     # work
-    # print(os.listdir(os.path.join(TEST_FOLDER, "dent_images")))
     for root, dirnames, filenames in os.walk(IMAGE_FOLDER):
         print("IMAGE", len(filenames))
     for root, dirnames, filenames in os.walk(MASK_FOLDER):
@@ -70,6 +73,9 @@ def main():
         while ret_code == 1:
             ret = subprocess.run(["fusermount", "-u", folder])
             ret_code = ret.returncode
+            if ret_code == 1:
+                print(Colors.RED, "Retry unmount", Colors.RESET)
+                time.sleep(1)
         print(Colors.GREEN, f"Unmount f{folder} done!", Colors.RESET)
 
     folders = [IMAGE_FOLDER, MASK_FOLDER, WRITE_FOLDER]
