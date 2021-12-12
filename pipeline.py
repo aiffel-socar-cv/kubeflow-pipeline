@@ -13,8 +13,8 @@ def retrain_pipeline():
 
     mv_files = dsl.ContainerOp(
         name="Move files",
-        image="tseo/mv_files:0.3",
-        arguments=["--json_path", check_files.outputs["file_num"]],
+        image="tseo/mv_files:0.6",
+        arguments=["--json_file", check_files.outputs["file_num"]],
     )
 
     mv_files.after(check_files)

@@ -40,6 +40,7 @@ if __name__ == "__main__":
     print(f"Scratch Masks: {num_scratch_masks}")
     print(f"Spacing Images: {num_spacing_images}")
     print(f"Spacing Masks: {num_spacing_masks}")
+    print(f"=" * 30)
 
     if num_dent_images == num_dent_masks:
         data_dict["dent"] = num_dent_images

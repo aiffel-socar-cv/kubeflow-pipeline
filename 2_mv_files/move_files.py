@@ -5,31 +5,25 @@ from io import StringIO
 from google.cloud import storage
 
 
-def json2dict(json_file_path):
-    # json_file_path = StringIO(json_file_path)
-    # with open(json_file_path, "r") as f:
-    file_num_dict = json.load(json_file_path)
-    return file_num_dict
-
-
 if __name__ == "__main__":
     argument_parser = argparse.ArgumentParser()
 
-    argument_parser.add_argument("--json_path", type=str, help="Input JSON file path")
+    argument_parser.add_argument("--json_file", type=str, help="Input JSON file path")
 
     args = argument_parser.parse_args()
-    json_file_path = args.json_path
-    print("JSON FILE PATH: ", json_file_path)
+    json_file = args.json_file
+    print("JSON FILE: ", json_file)
+    print("JSON FILE TYPE: ", type(json_file))  # str type
 
-    if json_file_path:
-        file_num = json2dict(json_file_path)
+    file_num_dict = eval(json_file)  # str to dict
 
     print("=" * 30)
-    print(file_num)
+    print("FILE NUM DICT: ", file_num_dict)
+    print("FILE NUM TYPE: ", type(file_num_dict))  # dict type
 
-    if file_num["dent"] > 100:
-        print("Dent files are moved.")
-    if file_num["scratch"] > 100:
-        print("Scratch files are moved.")
-    if file_num["spacing"] > 100:
-        print("Spacing files are moved.")
+    # if file_num["dent"] > 100:
+    #     print("Dent files are moved.")
+    # if file_num["scratch"] > 100:
+    #     print("Scratch files are moved.")
+    # if file_num["spacing"] > 100:
+    #     print("Spacing files are moved.")
