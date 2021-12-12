@@ -28,7 +28,7 @@ def create_folder(directory):
             os.makedirs(directory)
 
     except OSError:
-        print(Colors.RED, "Craeting directory failed.", Colors.RESET)
+        print(Colors.RED, "Creating  directory failed.", Colors.RESET)
 
 
 def main():
