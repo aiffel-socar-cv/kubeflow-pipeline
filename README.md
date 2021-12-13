@@ -20,6 +20,8 @@
 - [kubeflow pipeline 사용해보기 - kubeflow pipeline example with iris data](https://lsjsj92.tistory.com/581)
 - [Python kfp.dsl.ContainerOp() Examples](https://www.programcreek.com/python/example/117617/kfp.dsl.ContainerOp)
 - [Kubeflow - Pipelines 소개 - 2](https://byeongjo-kim.tistory.com/28)
+- [[GCP] AI Platform에서 구현하는 Kubeflow Pipelines 기반 ML 학습 및 배포 예제 (Part 3/3)](https://medium.com/@whjang?p=87ff52f8507a)
+- [Components for Kubeflow Pipelines](https://github.com/kubeflow/pipelines/tree/master/components)
 
 ### GCP
 
@@ -27,6 +29,7 @@
 - [Install gcsfuse on Ubuntu](https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md)
 - [Alpine 기반 Cloud SDK 이미지](https://cloud.google.com/sdk/docs/downloads-docker)
 - [How to get gsutil to use gcloud credentials in a docker container](https://stackoverflow.com/questions/50819816/how-to-get-gsutil-to-use-gcloud-credentials-in-a-docker-container)
+- [How to move files in Google Cloud Storage from one bucket to another bucket by Python](https://stackoverflow.com/questions/25972482/how-to-move-files-in-google-cloud-storage-from-one-bucket-to-another-bucket-by-p)
 
 ### Docker
 
