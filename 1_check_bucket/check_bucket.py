@@ -19,12 +19,12 @@ if __name__ == "__main__":
     client = storage.Client.from_service_account_json("/.gcp/aiffel-gn-3-c8c200820331.json")
     # client = storage.Client.from_service_account_json("aiffel-gn-3-c8c200820331.json")
 
-    dent_images = client.list_blobs(BUCKET_NAME, prefix="dent/images")
-    dent_masks = client.list_blobs(BUCKET_NAME, prefix="dent/masks")
-    scratch_images = client.list_blobs(BUCKET_NAME, prefix="scratch/images")
-    scratch_masks = client.list_blobs(BUCKET_NAME, prefix="scratch/masks")
-    spacing_images = client.list_blobs(BUCKET_NAME, prefix="spacing/images")
-    spacing_masks = client.list_blobs(BUCKET_NAME, prefix="spacing/masks")
+    dent_images = client.list_blobs(BUCKET_NAME, prefix="dent/train/images")
+    dent_masks = client.list_blobs(BUCKET_NAME, prefix="dent/train/masks")
+    scratch_images = client.list_blobs(BUCKET_NAME, prefix="scratch/train/images")
+    scratch_masks = client.list_blobs(BUCKET_NAME, prefix="scratch/train/masks")
+    spacing_images = client.list_blobs(BUCKET_NAME, prefix="spacing/train/images")
+    spacing_masks = client.list_blobs(BUCKET_NAME, prefix="spacing/train/masks")
 
     num_dent_images = file_counter(dent_images)
     num_dent_masks = file_counter(dent_masks)
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     print(f"Scratch Masks: {num_scratch_masks}")
     print(f"Spacing Images: {num_spacing_images}")
     print(f"Spacing Masks: {num_spacing_masks}")
-    print(f"=" * 30)
+    print("=" * 30)
 
     if num_dent_images == num_dent_masks:
         data_dict["dent"] = num_dent_images
