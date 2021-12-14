@@ -1,0 +1,9 @@
+retrain/gcp-credentials.json
+retrain/data/*
+retrain/test
+retrain/checkpoint
+retrain/test_results_dir
+retrain/checkpoints_dir
+retrain/wandb/*
+check-cnt/*
+*.json
