@@ -1,12 +1,32 @@
 # Kubeflow Pipeline
 
+![](./_asset/pipeline.png)
+![](./_asset/run_kf.png)
+
 - [x] Kubeflow Setting on Ubuntu 20.04
-- [ ] 버킷에 inffered 된 이미지가 100장이 넘는지 확인
+- [x] 버킷에 inffered 된 이미지가 100장이 넘는지 확인
 - [ ] train 및 evaluation
+    - [x] local run
+    - [ ] on gcp run
 
-## Port Forwarding
+## Dependencies
+- kfp (1.8.9)
 
-- `kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80`
+## How to Run the Code
+**Create Pipeline**
+```bash
+python pipeline.py
+```
+
+## Port-Forward and Run Dashboard
+
+```
+kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+```
+
+- `http://localhost:8080`
+- default email address: `user@example.com`
+- default password: `12341234`
 
 ## References
 
