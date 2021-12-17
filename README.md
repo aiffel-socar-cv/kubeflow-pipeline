@@ -4,10 +4,11 @@
 ![](./_asset/run_kf.png)
 
 - [x] Kubeflow Setting on Ubuntu 20.04
-- [x] 버킷에 inffered 된 이미지가 100장이 넘는지 확인
-- [ ] train 및 evaluation
-    - [x] local run
-    - [ ] on gcp run
+- [x] Component 1: Check images if images are over 100 in the bucket.
+- [x] Component 2: Move images from annotated-bucket to retrain-bucket.
+- [ ] train & evaluation
+    - [x] local run test
+    - [ ] on gcp run test
 
 ## Dependencies
 - kfp (1.8.9)
